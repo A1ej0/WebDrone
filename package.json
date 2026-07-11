@@ -1,0 +1,9 @@
+{
+  "name": "aerovista-drone",
+  "version": "1.0.0",
+  "description": "AeroVista — Servicios Profesionales de Tomas Aéreas con Dron",
+  "scripts": {
+    "build": "node generate-manifest.js",
+    "dev": "node generate-manifest.js && npx -y serve . -p 3456"
+  }
+}

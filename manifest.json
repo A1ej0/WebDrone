@@ -1,0 +1,29 @@
+{
+  "generatedAt": "2026-07-11T16:49:44.778Z",
+  "gallery": [
+    {
+      "src": "images/galeria/Copia de DJI_0259.JPG",
+      "alt": "Toma aérea profesional 1",
+      "title": "Vista Aérea 1",
+      "desc": "Captura profesional con DJI Air 2S — 20MP"
+    },
+    {
+      "src": "images/galeria/DJI_0257.JPG",
+      "alt": "Toma aérea profesional 2",
+      "title": "Vista Aérea 2",
+      "desc": "Captura profesional con DJI Air 2S — 20MP"
+    }
+  ],
+  "panorama": [
+    {
+      "src": "images/360/360_1.JPG",
+      "alt": "Panorámica 360° - Vista 1",
+      "label": "Vista 1"
+    },
+    {
+      "src": "images/360/360_2.JPG",
+      "alt": "Panorámica 360° - Vista 2",
+      "label": "Vista 2"
+    }
+  ]
+}
