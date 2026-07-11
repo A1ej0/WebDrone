@@ -270,7 +270,24 @@ document.addEventListener('DOMContentLoaded', async () => {
     submitBtn.innerHTML = '<div class="spinner" style="width:20px;height:20px;border-width:2px;"></div> Enviando...';
     submitBtn.disabled = true;
 
-    setTimeout(() => {
+    fetch('https://formspree.io/f/xnjeapgd', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify({
+        servicio: formData.projectType,
+        descripcion: formData.description,
+        fecha: formData.date,
+        nombre: formData.name,
+        telefono: formData.phone,
+        email: formData.email
+      })
+    })
+    .then(response => {
+      if (!response.ok) throw new Error('Error al enviar el formulario');
+
       formContainer.style.display = 'none';
       formSuccess.classList.add('show');
 
@@ -289,8 +306,15 @@ document.addEventListener('DOMContentLoaded', async () => {
         link.href = `${baseUrl}?text=${waMessage}`;
       });
 
-      console.log('Form submitted:', formData);
-    }, 1500);
+      console.log('Form submitted to Formspree:', formData);
+    })
+    .catch(error => {
+      console.error('Formspree error:', error);
+      alert('Hubo un error al enviar tu solicitud. Por favor intenta de nuevo.');
+      submitBtn.innerHTML = 'Enviar Solicitud <i data-lucide="send" style="width:18px;height:18px;"></i>';
+      submitBtn.disabled = false;
+      if (window.lucide) lucide.createIcons();
+    });
   });
 
   // ==================== SCROLL REVEAL ANIMATIONS ====================
